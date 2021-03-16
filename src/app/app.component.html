@@ -1,0 +1,11 @@
+<input [(ngModel)]="searchString">
+<table *ngIf="(categories | async) as categories" style="border: black solid 1px;">
+  <tr>
+    <th>category</th>
+  </tr>
+  <ng-container *ngFor="let item of categories | search : searchString">
+    <tr>
+      <td>{{item}}</td>
+    </tr>
+  </ng-container>
+</table>
